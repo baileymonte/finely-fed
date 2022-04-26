@@ -112,10 +112,10 @@ class Layout extends Component {
                   <NavLink to="/health & wellness" className="menu-item" onClick={() => this.menuClick()}>HEALTH & WELLNESS</NavLink>
                 </li>
                 <li className="top-menu-item">
-                  <NavLink to="/travel" className="menu-item" onClick={() => this.menuClick()}>TRAVEL</NavLink>
+                  <NavLink to="/recipes" className="menu-item" onClick={() => this.menuClick()}>RECIPES</NavLink>
                 </li>
                 <li className="top-menu-item">
-                  <NavLink to="/recipes" className="menu-item" onClick={() => this.menuClick()}>RECIPES</NavLink>
+                  <NavLink to="/travel" className="menu-item" onClick={() => this.menuClick()}>TRAVEL</NavLink>
                 </li>
                 <li className="top-menu-item">
                   <NavLink to="#" className="icon" onClick={() => this.myFunction()}><span></span></NavLink>
@@ -164,8 +164,8 @@ class Layout extends Component {
                     <Grid.Column width={11}>
                       <div className="footer-right">
                         <nav>
-                          <NavLink to="/recipes">RECIPES</NavLink>
                           <NavLink to="/travel">TRAVEL</NavLink>
+                          <NavLink to="/recipes">RECIPES</NavLink>
                           <NavLink to="/health & wellness">HEALTH & WELLNESS</NavLink>
                           <NavLink to="/living" style={{ marginRight: '-6px' }}>LIVING</NavLink>
                         </nav>
@@ -187,8 +187,8 @@ class Layout extends Component {
                     <img src={logo} className="main-menu-logo" />
                   </NavLink>
                   <nav>
-                    <NavLink to="/recipes">RECIPES</NavLink>
                     <NavLink to="/travel" style={{ marginLeft: '3px' }}>TRAVEL</NavLink>
+                    <NavLink to="/recipes">RECIPES</NavLink>
                     <NavLink to="/health & wellness">HEALTH & WELLNESS</NavLink>
                     <NavLink to="/living">LIVING</NavLink>
                   </nav>

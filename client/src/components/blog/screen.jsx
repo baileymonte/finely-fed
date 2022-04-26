@@ -83,7 +83,7 @@ function Screen({ pages, category, mediaURLs }) {
                         if (filteredPage.slug === 'best-restaurants-in-los-angeles') {
                           return (
                             // <p key={index}>This guide is my unofficial love letter to Los Angeles. I've been in this city for over seven years, and the food has captivated me since the start. The sheer number of restaurants can be overwhelming, and I am definitely a bit neurotic in my quest to discover the best spots in LA.</p>
-                            <p key={index}>This guide is my unofficial love letter to Los Angeles. I've been in this city for eight years, and the food has captivated me from the start. The sheer number of restaurants can be overwhelming, and I am definitely a bit neurotic in my quest to discover the best spots in LA.</p>                            
+                            <p key={index}>This guide is my unofficial love letter to Los Angeles. I've been in this city for eight years, and the food scene here has captivated me from the start. The sheer number of restaurants can be overwhelming, and I am definitely a bit neurotic in my quest to discover the best spots in LA.</p>                            
                           )
                         }
                       })}
@@ -144,7 +144,7 @@ function Screen({ pages, category, mediaURLs }) {
             <div className="container featured" style={{ marginTop: '0px' }}>
               {/* <div className="featured-top-effect" /> */}
               {allPages.map((filteredPage, index) => {
-                if (filteredPage.slug === 'best-ever-tuna-salad') {
+                if (filteredPage.slug === 'go-to-healthy-lunch-sweet-potato-bowl') {
                   return (
                     <div className="wrapper just" key={index}>
                       <span className="featuredSpan" style={{ display: 'flex', flexDirection: 'row' }}>

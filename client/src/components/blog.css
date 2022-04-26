@@ -524,7 +524,7 @@ img.main-menu-logo {
   max-width: 800px;
   margin-left: auto !important;
   margin-right: auto !important;
-  font-size: 60px;
+  font-size: 67.4px;
   line-height: 70px;
   text-align: center;
   padding-bottom: 45px;
@@ -582,7 +582,8 @@ img.main-menu-logo {
 }
 
 .article-content p {
-  font-size: 16px;
+  font-size: 14.7px;
+  line-height: 25.66px;
 }
 
 @media (max-width: 960px) {
@@ -926,7 +927,7 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 @media screen and (max-width: 768px) {
   .topnav {
     padding-top: 40px;
-    padding-bottom: 30px;
+    padding-bottom: 100px;
   }
   #myTopnav .icon {
     top: 40px;
@@ -1040,6 +1041,7 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
   padding-bottom: 90px;
   padding-left: 30px;
   padding-right: 30px;
+
 }
 
 .insta-row {
@@ -1196,6 +1198,24 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 }
 
 @media (max-width: 600px) {
+  .watch{
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  .wrapper{
+    padding-bottom: 22px;
+  }
+  .featured-title{
+    margin-top: 0px;
+  }
+  .featured{
+    margin-top: 0px;
+    padding-top: 50px;
+    padding-bottom: 23px;
+  }
+  .container.main-posts {
+    padding-top: 40px;
+  }
   .col-3, .col-3-inner .widget, .col-3-inner .post {
     width: calc(100% - 20px);
     vertical-align: top;
@@ -1259,6 +1279,13 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
   }
   .category span {
     padding-left: 0px !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .container.main-posts{
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
 }
 
@@ -1372,4 +1399,4 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 
 .mb-0 {
   margin-bottom: -3px !important;
-}
+} 
