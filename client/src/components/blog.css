@@ -524,7 +524,7 @@ img.main-menu-logo {
   max-width: 800px;
   margin-left: auto !important;
   margin-right: auto !important;
-  font-size: 67.4px;
+  font-size: 65.4px;
   line-height: 70px;
   text-align: center;
   padding-bottom: 45px;
@@ -927,7 +927,7 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 @media screen and (max-width: 768px) {
   .topnav {
     padding-top: 40px;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
   }
   #myTopnav .icon {
     top: 40px;
@@ -1010,7 +1010,6 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 
 .post {
   min-height: 380px;
-  margin-top: 28px;
   margin-bottom: 28px;
   position: relative;
   height: auto;
@@ -1284,7 +1283,7 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 
 @media (max-width: 425px) {
   .container.main-posts{
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 10px;
   }
 }

@@ -12,7 +12,7 @@ function Screen({ pages, category, mediaURLs }) {
   let filteredPages = [];
   for (var i = 0; i < allPages.length; i++) {
     if (category === "All") {
-      if (allPages[i].slug !== "best-restaurants-in-los-angeles" && allPages[i].slug !== "best-ever-tuna-salad") {
+      if (allPages[i].slug !== "best-restaurants-in-los-angeles" && allPages[i].slug !== "go-to-healthy-lunch-sweet-potato-bowl") {
         filteredPages.push(allPages[i]);
       }
     } else {
