@@ -1,18 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PostPreview from "./PostPreview";
-import 'semantic-ui-css/semantic.min.css';
-import { Icon } from 'semantic-ui-react';
-import featured from '../../components/images/guide.jpeg';
-
+import "semantic-ui-css/semantic.min.css";
+import { Icon } from "semantic-ui-react";
+import featured from "../../components/images/guide.jpeg";
 
 function Screen({ pages, category, mediaURLs }) {
-  const allPages = category === "All" ? pages : pages.filter(page => (page.categories.length > 0 ? page.categories[0].name === category : false));
+  const allPages =
+    category === "All"
+      ? pages
+      : pages.filter((page) =>
+          page.categories.length > 0
+            ? page.categories[0].name === category
+            : false
+        );
 
   let filteredPages = [];
   for (var i = 0; i < allPages.length; i++) {
     if (category === "All") {
-      if (allPages[i].slug !== "best-restaurants-in-los-angeles" && allPages[i].slug !== "go-to-healthy-lunch-sweet-potato-bowl") {
+      if (
+        allPages[i].slug !== "best-restaurants-in-los-angeles" &&
+        allPages[i].slug !== "go-to-healthy-lunch-sweet-potato-bowl"
+      ) {
         filteredPages.push(allPages[i]);
       }
     } else {
@@ -23,10 +32,10 @@ function Screen({ pages, category, mediaURLs }) {
   return (
     <div>
       <div className="blog-page">
-        {category === "All" ?
+        {category === "All" ? (
           <>
             <div className="container">
-              {filteredPages.length > 0 ?
+              {filteredPages.length > 0 ? (
                 <div className="wrapper just">
                   <div className="col-2">
                     <PostPreview
@@ -41,7 +50,7 @@ function Screen({ pages, category, mediaURLs }) {
                     />
                   </div>
                   <div className="col-1">
-                    {filteredPages.length > 1 ?
+                    {filteredPages.length > 1 ? (
                       <PostPreview
                         key={`blogpost-${filteredPages[1].title}-${filteredPages[1].created}`}
                         title={filteredPages[1].title}
@@ -52,8 +61,8 @@ function Screen({ pages, category, mediaURLs }) {
                         url={filteredPages[1].url}
                         slug={filteredPages[1].slug}
                       />
-                      : null}
-                    {filteredPages.length > 2 ?
+                    ) : null}
+                    {filteredPages.length > 2 ? (
                       <PostPreview
                         key={`blogpost-${filteredPages[2].title}-${filteredPages[2].created}`}
                         title={filteredPages[2].title}
@@ -64,32 +73,54 @@ function Screen({ pages, category, mediaURLs }) {
                         url={filteredPages[2].url}
                         slug={filteredPages[2].slug}
                       />
-                      : null}
+                    ) : null}
                   </div>
                 </div>
-                : null}
+              ) : null}
             </div>
 
             <div className="container featured">
               <div className="wrapper just">
-                <span className="featuredSpan" style={{ display: 'flex', flexDirection: 'row' }}>
+                <span
+                  className="featuredSpan"
+                  style={{ display: "flex", flexDirection: "row" }}
+                >
                   <img src={featured} className="featured-img" />
-                  <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div className="featured-title" >
-                      <p>  los angeles restaurant guide  </p>
+                  <span
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <div className="featured-title">
+                      <p> los angeles restaurant guide </p>
                     </div>
-                    <div className="featured-summary" >
+                    <div className="featured-summary">
                       {allPages.map((filteredPage, index) => {
-                        if (filteredPage.slug === 'best-restaurants-in-los-angeles') {
+                        if (
+                          filteredPage.slug ===
+                          "best-restaurants-in-los-angeles"
+                        ) {
                           return (
                             // <p key={index}>This guide is my unofficial love letter to Los Angeles. I've been in this city for over seven years, and the food has captivated me since the start. The sheer number of restaurants can be overwhelming, and I am definitely a bit neurotic in my quest to discover the best spots in LA.</p>
-                            <p key={index}>This guide is my unofficial love letter to Los Angeles. I've been in this city for eight years, and the food scene here has captivated me from the start. The sheer number of restaurants can be overwhelming, and I am definitely a bit neurotic in my quest to discover the best spots in LA.</p>                            
-                          )
+                            <p key={index}>
+                              This guide is my unofficial love letter to Los
+                              Angeles. I've been in this city for eight years,
+                              and the food scene here has captivated me from the
+                              start. The sheer number of restaurants can be
+                              overwhelming, and I am definitely a bit neurotic
+                              in my quest to discover the best spots in LA.
+                            </p>
+                          );
                         }
                       })}
                       <div className="category">
                         <Link to="/travel/best-restaurants-in-los-angeles">
-                          <span style={{ paddingLeft: '45px' }}> Read More >> </span>
+                          <span style={{ paddingLeft: "45px" }}>
+                            {" "}
+                            {"Read More >>"}{" "}
+                          </span>
                         </Link>
                       </div>
                     </div>
@@ -99,31 +130,45 @@ function Screen({ pages, category, mediaURLs }) {
             </div>
 
             <div className="container watch">
-              <div className="blog-title" style={{ textAlign: 'center', paddingBottom: '30px' }}>
+              <div
+                className="blog-title"
+                style={{ textAlign: "center", paddingBottom: "30px" }}
+              >
                 <a href="https://www.instagram.com/finelyfed/" target="_blank">
-                  <p style={{ color: 'black', fontFamily: 'Marcellus' }}> @finelyfed </p>
+                  <p style={{ color: "black", fontFamily: "Marcellus" }}>
+                    {" "}
+                    @finelyfed{" "}
+                  </p>
                 </a>
               </div>
 
               <div className="insta-row">
-                {mediaURLs && mediaURLs.length > 0 ?
-                  mediaURLs.map((media, index) => {
-                    return (
-                      <div key={index} className="insta-parent" style={{ position: 'relative' }}>
-                        <a href={`${media.permalink}`} target="_blank">
-                          <img className="insta-pic" src={`${media.media_url}`} style={{ display: 'block' }} />
-                        </a>
-                      </div>
-                    )
-                  })
+                {mediaURLs && mediaURLs.length > 0
+                  ? mediaURLs.map((media, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="insta-parent"
+                          style={{ position: "relative" }}
+                        >
+                          <a href={`${media.permalink}`} target="_blank">
+                            <img
+                              className="insta-pic"
+                              src={`${media.media_url}`}
+                              style={{ display: "block" }}
+                            />
+                          </a>
+                        </div>
+                      );
+                    })
                   : null}
               </div>
             </div>
 
             <div className="container main-posts">
               <div className="wrapper just">
-                {filteredPages.map((page, index) => (
-                  index >= 3 && index < 6 ?
+                {filteredPages.map((page, index) =>
+                  index >= 3 && index < 6 ? (
                     <div key={index} className="col-3">
                       <PostPreview
                         key={`blogpost-${page.title}-${page.created}`}
@@ -136,35 +181,60 @@ function Screen({ pages, category, mediaURLs }) {
                         slug={page.slug}
                       />
                     </div>
-                    : null
-                ))}
+                  ) : null
+                )}
               </div>
             </div>
 
-            <div className="container featured" style={{ marginTop: '0px' }}>
+            <div className="container featured" style={{ marginTop: "0px" }}>
               {/* <div className="featured-top-effect" /> */}
               {allPages.map((filteredPage, index) => {
-                if (filteredPage.slug === 'go-to-healthy-lunch-sweet-potato-bowl') {
+                if (
+                  filteredPage.slug === "go-to-healthy-lunch-sweet-potato-bowl"
+                ) {
                   return (
                     <div className="wrapper just" key={index}>
-                      <span className="featuredSpan" style={{ display: 'flex', flexDirection: 'row' }}>
-                        <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                          <div className="featured-title" >
+                      <span
+                        className="featuredSpan"
+                        style={{ display: "flex", flexDirection: "row" }}
+                      >
+                        <span
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <div className="featured-title">
                             <p> {filteredPage.title} </p>
                           </div>
-                          <div className="featured-summary" >
-                            <p>{filteredPage.summary.split(/\s+/).slice(0, 50).join(" ")}...</p>
+                          <div className="featured-summary">
+                            <p>
+                              {filteredPage.summary
+                                .split(/\s+/)
+                                .slice(0, 50)
+                                .join(" ")}
+                              ...
+                            </p>
                             <div className="category">
-                              <Link to={`/${filteredPage.categories[0].name}/${filteredPage.slug}`}>
-                                <span style={{ paddingLeft: '45px' }}> Read More >> </span>
+                              <Link
+                                to={`/${filteredPage.categories[0].name}/${filteredPage.slug}`}
+                              >
+                                <span style={{ paddingLeft: "45px" }}>
+                                  {" "}
+                                  {"Read More >>"}{" "}
+                                </span>
                               </Link>
                             </div>
                           </div>
                         </span>
-                        <img src={filteredPage.featured_image} className="featured-img" />
+                        <img
+                          src={filteredPage.featured_image}
+                          className="featured-img"
+                        />
                       </span>
                     </div>
-                  )
+                  );
                 }
               })}
               {/* <div className="featured-bottom-effect" /> */}
@@ -172,8 +242,10 @@ function Screen({ pages, category, mediaURLs }) {
 
             <div className="container main-posts">
               <div className="wrapper just">
-                {filteredPages.map((page, index) => (
-                  index >= 6 && index < filteredPages.length && page.slug !== 'best-ever-tuna-salad' ?
+                {filteredPages.map((page, index) =>
+                  index >= 6 &&
+                  index < filteredPages.length &&
+                  page.slug !== "go-to-healthy-lunch-sweet-potato-bowl" ? (
                     <div key={index} className="col-3">
                       <PostPreview
                         key={`blogpost-${page.title}-${page.created}`}
@@ -186,15 +258,15 @@ function Screen({ pages, category, mediaURLs }) {
                         slug={page.slug}
                       />
                     </div>
-                    : null
-                ))}
+                  ) : null
+                )}
               </div>
             </div>
           </>
-          :
+        ) : (
           <div className="container">
             <h1 className="text-center category-title">{category}</h1>
-            <div className="wrapper just" style={{ marginBottom: '50px' }}>
+            <div className="wrapper just" style={{ marginBottom: "50px" }}>
               {filteredPages.map((page, index) => (
                 <div key={index} className="col-3">
                   <PostPreview
@@ -211,24 +283,41 @@ function Screen({ pages, category, mediaURLs }) {
               ))}
             </div>
 
-            <div className="container watch" style={{ background: "#8AA899", paddingBottom: '70px' }}>
-              <div className="blog-title" style={{ textAlign: 'center', paddingBottom: '30px' }}>
+            <div
+              className="container watch"
+              style={{ background: "#8AA899", paddingBottom: "70px" }}
+            >
+              <div
+                className="blog-title"
+                style={{ textAlign: "center", paddingBottom: "30px" }}
+              >
                 <a href="https://www.instagram.com/finelyfed/" target="_blank">
-                  <p style={{ color: 'white', fontFamily: 'Marcellus' }}> @finelyfed </p>
+                  <p style={{ color: "white", fontFamily: "Marcellus" }}>
+                    {" "}
+                    @finelyfed{" "}
+                  </p>
                 </a>
               </div>
 
               <div className="insta-row">
-                {mediaURLs && mediaURLs.length > 0 ?
-                  mediaURLs.map((media, index) => {
-                    return (
-                      <div key={index} className="insta-parent" style={{ position: 'relative' }}>
-                        <a href={`${media.permalink}`} target="_blank">
-                          <img className="insta-pic" src={`${media.media_url}`} style={{ display: 'block' }} />
-                        </a>
-                      </div>
-                    )
-                  })
+                {mediaURLs && mediaURLs.length > 0
+                  ? mediaURLs.map((media, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="insta-parent"
+                          style={{ position: "relative" }}
+                        >
+                          <a href={`${media.permalink}`} target="_blank">
+                            <img
+                              className="insta-pic"
+                              src={`${media.media_url}`}
+                              style={{ display: "block" }}
+                            />
+                          </a>
+                        </div>
+                      );
+                    })
                   : null}
                 {/* <div className="insta-parent" style={{ position: 'relative' }}>
                   <a href="https://www.instagram.com/p/B8u4GPIBGag/" target="_blank">
@@ -274,12 +363,10 @@ function Screen({ pages, category, mediaURLs }) {
               </div>
             </div>
           </div>
-        }
+        )}
       </div>
-
     </div>
   );
-};
+}
 
 export default Screen;
-
