@@ -4,6 +4,10 @@
 
 /* ----------------------------------------- */
 
+iframe{
+  pointer-events: none;
+}
+
 .article-content sub {
   display: flex;
   justify-content: center;
@@ -84,7 +88,8 @@ a, span {
   background-size: 2px 2px;
   background-repeat: repeat-x;
   background-position: 0 100%;
-  background-image: linear-gradient(#8aa899,#8aa899);
+  /* background-image: linear-gradient(#8aa899,#8aa899); */
+  background-image: linear-gradient(#6E85B7,#6E85B7) !important;
 }
 
 .article-content a:hover {
@@ -201,7 +206,7 @@ h1, h2, h3, h4, h5, h6, a, p {
   .topnav.responsive {
     background: rgba(0, 0, 0, 0.82);
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
@@ -448,7 +453,8 @@ img.main-menu-logo {
 }
 
 .blogdetail-page .category a {
-  color: #8AA899 !important;
+  /* color: #8AA899 !important; */
+  color: #6E85B7 !important;
   font-family: 'Marcellus';
   text-transform: uppercase;
 }
@@ -457,15 +463,16 @@ img.main-menu-logo {
   position: relative;
   width: 100%;
   text-align: center;
-  top: 25px;
+  top: 30px;
   left: 10px;
 }
 
 .article-hero .category a {
-  color: #8AA899 !important;
+  /* color: #8AA899 !important; */
+  color: #6E85B7 !important;
   font-family: 'Marcellus';
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .article-hero {
@@ -599,7 +606,7 @@ img.main-menu-logo {
 }
 
 .bg-grey {
-  background-color: #8aa899;
+  background-color: #6E85B7;
   padding-top: 50px !important;
   margin-top: 71px;
   padding-bottom: 30px !important;
@@ -1027,7 +1034,7 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 }
 
 .featured {
-  background: #8AA899;
+  background: #6E85B7;
   margin-top: 30px;
   padding-top: 60px;
   padding-bottom: 70px;
@@ -1102,7 +1109,7 @@ i#insta-icon:hover, i#twitter-icon:hover, i#pinterest-icon:hover {
 @media (max-width: 960px) {
   .mobile-screen .article-hero .hero-sidebar h1 {
     font-size: 36px;
-    line-height: 48px !important;
+    line-height: 40px !important;
     text-align: center !important;
     padding-bottom: 45px;
     padding-left: 30px;

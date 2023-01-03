@@ -13,6 +13,7 @@ const BlogDetail = ({ match }) => {
   const currentPage = state.pages.data.find(page => page.slug === slug[slug.length - 1]);
 
   const category = currentPage.categories[0].name;
+  console.log("????",category);
   const filteredPages = state.pages.data.filter(page => ((page.categories[0].name === category) && (page.slug !== currentPage.slug)));
   const unfilteredPages = state.pages.data.filter(page => ((page.categories[0].name !== category)));
 
@@ -28,8 +29,8 @@ const BlogDetail = ({ match }) => {
           data.data[i].categories[0].name = "living";
           data.data[i].categories[0].slug = "living";
         } else if (data.data[i].categories[0].name === 'wellness') {
-          data.data[i].categories[0].name = "health & wellness";
-          data.data[i].categories[0].slug = "health & wellness";
+          data.data[i].categories[0].name = "living";
+          data.data[i].categories[0].slug = "living";
         }
       }
 

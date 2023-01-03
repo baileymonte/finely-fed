@@ -11,6 +11,8 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
+  console.log("::::::::",state);
+  console.log("::::::::22222",action);
   switch (action.type) {
     case "update_pages":
       return {

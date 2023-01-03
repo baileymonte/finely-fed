@@ -19,7 +19,7 @@ const PostPreview = ({
         <div className="post-content">
           <div className="top">
             <div className="category">
-              <span>{categories && categories[0] && categories[0].name}</span>
+              <span>{categories && categories[0] && categories[0].name === "health & wellness" ? "Living" : categories[0].name}</span>
             </div>
           </div>
           <div className="bottom">

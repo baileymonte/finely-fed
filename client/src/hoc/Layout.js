@@ -23,6 +23,7 @@ class Layout extends Component {
   async componentDidMount() {
     const [state, dispatch] = this.context;
     const { data } = await butter.post.list({ page: 1, page_size: 20 });
+    console.log(">>>>>>>>",data);
     for (var i = 0; i < data.data.length; i++) {
       if (data.data[i].categories[0].name === 'food') {
         data.data[i].categories[0].name = "recipes";
@@ -31,8 +32,8 @@ class Layout extends Component {
         data.data[i].categories[0].name = "living";
         data.data[i].categories[0].slug = "living";
       } else if (data.data[i].categories[0].name === 'wellness') {
-        data.data[i].categories[0].name = "health & wellness";
-        data.data[i].categories[0].slug = "health & wellness";
+        data.data[i].categories[0].name = "living";
+        data.data[i].categories[0].slug = "living";
       }
     }
 
@@ -108,9 +109,9 @@ class Layout extends Component {
                 <li className="top-menu-item">
                   <NavLink to="/living" className="menu-item" id="last-item" onClick={() => this.menuClick()}>LIVING</NavLink>
                 </li>
-                <li className="top-menu-item">
+                {/* <li className="top-menu-item">
                   <NavLink to="/health & wellness" className="menu-item" onClick={() => this.menuClick()}>HEALTH & WELLNESS</NavLink>
-                </li>
+                </li> */}
                 <li className="top-menu-item">
                   <NavLink to="/travel" className="menu-item" onClick={() => this.menuClick()}>TRAVEL</NavLink>
                 </li>

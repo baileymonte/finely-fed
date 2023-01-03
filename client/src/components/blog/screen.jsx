@@ -7,8 +7,9 @@ import featured from '../../components/images/guide.jpeg';
 
 
 function Screen({ pages, category, mediaURLs }) {
-  const allPages = category === "All" ? pages : pages.filter(page => (page.categories.length > 0 ? page.categories[0].name === category : false));
-
+  console.log("HELLO",category, pages);
+  const allPages = category === "All" ? pages : pages.filter(page => (page.categories.length > 0 ? category == "living" ? (page.categories[0].name === "living" || page.categories[0].name ===  "health & wellness") : page.categories[0].name === category : false));
+  console.log("////",allPages);
   let filteredPages = [];
   for (var i = 0; i < allPages.length; i++) {
     if (category === "All") {
@@ -211,7 +212,7 @@ function Screen({ pages, category, mediaURLs }) {
               ))}
             </div>
 
-            <div className="container watch" style={{ background: "#8AA899", paddingBottom: '70px' }}>
+            <div className="container watch" style={{ background: "#6E85B7", paddingBottom: '70px' }}>
               <div className="blog-title" style={{ textAlign: 'center', paddingBottom: '30px' }}>
                 <a href="https://www.instagram.com/finelyfed/" target="_blank">
                   <p style={{ color: 'white', fontFamily: 'Marcellus' }}> @finelyfed </p>
