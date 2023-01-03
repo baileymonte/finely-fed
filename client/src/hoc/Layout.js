@@ -37,29 +37,29 @@ class Layout extends Component {
       }
     }
 
-    let mediaURLs = [];
-    // const old_token = "IGQVJYWEtJREJIT0hVNGo3U2tkQnRyOUs3WDNWeWs4MWxCUTFFMnoyaUR0REM3YnBrT0hyQjBmc3Vtcld0X184VUhHeWYzRjBhaVZAqQXVtYzF5NmJwY19BNUdnRDRwRmQ2NmU1U2FNMWYxUFRzTkVtZAwZDZD"
-    const access_token = "IGQVJWRy00eG9vU015ZA21tZAHFvVE1mUzlBVjA1TVIwRFFKVUlhWVZAYQi11ZAHpHbFN3aDNINERUQmt1V0hVdHhJN3lFa3o2WmtLVHo0SUhtNG5PcktqeHpaRTVibUhTNlg5WmZANYndFYnY1aVhsTDd4cgZDZD";
-    await fetch(`https://graph.instagram.com/v10.0/17841408078439206/media?access_token=${access_token}&limit=10`)
-      .then(res => res.json())
-      .then(
-        async (result) => {
-          for (var i = 0; i < 6; i++) {
-            await fetch(`https://graph.instagram.com/${result.data[i].id}?fields=id,media_type,permalink,media_url,username,timestamp&access_token=${access_token}`).then(res => res.json()).then((media) => {
-              mediaURLs.push({ media_url: media.media_url, permalink: media.permalink });
-            })
-          }
-        }
-      )
+    // let mediaURLs = [];
+    // // const old_token = "IGQVJYWEtJREJIT0hVNGo3U2tkQnRyOUs3WDNWeWs4MWxCUTFFMnoyaUR0REM3YnBrT0hyQjBmc3Vtcld0X184VUhHeWYzRjBhaVZAqQXVtYzF5NmJwY19BNUdnRDRwRmQ2NmU1U2FNMWYxUFRzTkVtZAwZDZD"
+    // const access_token = "IGQVJWRy00eG9vU015ZA21tZAHFvVE1mUzlBVjA1TVIwRFFKVUlhWVZAYQi11ZAHpHbFN3aDNINERUQmt1V0hVdHhJN3lFa3o2WmtLVHo0SUhtNG5PcktqeHpaRTVibUhTNlg5WmZANYndFYnY1aVhsTDd4cgZDZD";
+    // await fetch(`https://graph.instagram.com/v10.0/17841408078439206/media?access_token=${access_token}&limit=10`)
+    //   .then(res => res.json())
+    //   .then(
+    //     async (result) => {
+    //       for (var i = 0; i < 6; i++) {
+    //         await fetch(`https://graph.instagram.com/${result.data[i].id}?fields=id,media_type,permalink,media_url,username,timestamp&access_token=${access_token}`).then(res => res.json()).then((media) => {
+    //           mediaURLs.push({ media_url: media.media_url, permalink: media.permalink });
+    //         })
+    //       }
+    //     }
+    //   )
 
     dispatch({
       type: "update_pages",
       data
     });
-    dispatch({
-      type: "get_instagram_images",
-      mediaURLs
-    })
+    // dispatch({
+    //   type: "get_instagram_images",
+    //   mediaURLs
+    // })
   }
   menuClick = () => {
     var x = document.getElementById("myTopnav");
@@ -113,10 +113,10 @@ class Layout extends Component {
                   <NavLink to="/health & wellness" className="menu-item" onClick={() => this.menuClick()}>HEALTH & WELLNESS</NavLink>
                 </li> */}
                 <li className="top-menu-item">
-                  <NavLink to="/travel" className="menu-item" onClick={() => this.menuClick()}>TRAVEL</NavLink>
+                  <NavLink to="/recipes" className="menu-item" onClick={() => this.menuClick()}>RECIPES</NavLink>
                 </li>
                 <li className="top-menu-item">
-                  <NavLink to="/recipes" className="menu-item" onClick={() => this.menuClick()}>RECIPES</NavLink>
+                  <NavLink to="/travel" className="menu-item" onClick={() => this.menuClick()}>TRAVEL</NavLink>
                 </li>
                 <li className="top-menu-item">
                   <NavLink to="#" className="icon" onClick={() => this.myFunction()}><span></span></NavLink>
@@ -165,9 +165,9 @@ class Layout extends Component {
                     <Grid.Column width={11}>
                       <div className="footer-right">
                         <nav>
-                          <NavLink to="/recipes">RECIPES</NavLink>
                           <NavLink to="/travel">TRAVEL</NavLink>
-                          <NavLink to="/health & wellness">HEALTH & WELLNESS</NavLink>
+                          <NavLink to="/recipes">RECIPES</NavLink>
+                          {/* <NavLink to="/health & wellness">HEALTH & WELLNESS</NavLink> */}
                           <NavLink to="/living" style={{ marginRight: '-6px' }}>LIVING</NavLink>
                         </nav>
                         <p style={{ marginRight: '18px', color: '#242424' }}>ALL RIGHTS RESERVED © FINELY FED 2020</p>
@@ -188,9 +188,9 @@ class Layout extends Component {
                     <img src={logo} className="main-menu-logo" />
                   </NavLink>
                   <nav>
-                    <NavLink to="/recipes">RECIPES</NavLink>
                     <NavLink to="/travel" style={{ marginLeft: '3px' }}>TRAVEL</NavLink>
-                    <NavLink to="/health & wellness">HEALTH & WELLNESS</NavLink>
+                    <NavLink to="/recipes">RECIPES</NavLink>
+                    {/* <NavLink to="/health & wellness">HEALTH & WELLNESS</NavLink> */}
                     <NavLink to="/living">LIVING</NavLink>
                   </nav>
                   <div className="footer-social">
